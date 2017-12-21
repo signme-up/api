@@ -47,12 +47,11 @@ module.exports = {
       password: req.body.password,
     })
       .then(user => {
-        const {_id, email} = user
         res.status(200).json({
           message: 'User signup successful',
           data: {
-            _id,
-            email
+            _id :user._id,
+            email : user.emai
           }
         })
       })
