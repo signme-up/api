@@ -16,7 +16,7 @@ let eventSchema = new Schema(
       type: String
     },
     organizer : {
-      type : String,
+      type : Schema.Types.ObjectId,
       ref: 'User'
     },    
   },
