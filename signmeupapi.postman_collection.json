@@ -1,0 +1,517 @@
+{
+  "info": {
+    "name": "signmeupapi",
+    "description": "signmeupapi PostMan Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Create new user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Get one user",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Update one user",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Delete one user",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Get all events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "events"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Create new event",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "startdate",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "logo",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "events"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Get one event",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/events/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "events",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Update one event",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "startdate",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "logo",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "events",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Delete one event",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/events/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "events",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Get all guests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/guests",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "guests"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Create new guest",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "identityurl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "event",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/guests",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "guests"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Get one guest",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/guests/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "guests",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Update one guest",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "identityurl",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "event",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/guests/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "guests",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    },
+    {
+      "name": "Delete one guest",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/guests/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "guests",
+            "1"
+          ],
+          "query": []
+        },
+        "description": null
+      },
+      "response": []
+    }
+  ]
+}
