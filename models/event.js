@@ -28,7 +28,9 @@ let Event = mongoose.model('Event', eventSchema)
 
 class EventModel {
   static getEvents(req, res, next) {
-    Event.find()
+    Event.find({
+      organizer : req.userId
+    })
     .then(events =>
       res.status(200).json({
         message: 'Events get success',
@@ -39,7 +41,10 @@ class EventModel {
   }
 
   static getEvent(req, res, next) {
-    Event.findById(req.params.id)
+    Event.findOne({
+      _id : req.params.id,
+      organizer : req.userId
+    })
     .then(event => {
       if (event) {
         res.status(200).json({
@@ -56,13 +61,17 @@ class EventModel {
   }
 
   static createEvent(req, res, next) {
-    req.body.logo = req.file.cloudStoragePublicUrl
-    let newEvent = new Event(req.body)
-    newEvent.save()
-    .then(events => {
+    Event.create({
+      name: req.body.name,
+      startdate: req.body.startdate,
+      logo: req.file.cloudStoragePublicUrl,
+      description: req.body.description,
+      organizer : req.userId
+    })
+    .then(event => {
       res.status(200).json({
         message: 'Event successfully created',
-        data: events
+        data: event
       })
     })
     .catch((err) => {
@@ -71,15 +80,15 @@ class EventModel {
   }
 
   static updateEvent(req, res, next) {
-    if(req.file){
-      req.body.logo = req.file.cloudStoragePublicUrl
-    }
-    Event.findByIdAndUpdate(
-      req.params.id,
+    Event.findOneAndUpdate(
+      {
+        _id : req.params.id,
+        organizer : req.userId
+      },
       {
         name: req.body.name,
         startdate: req.body.startdate,
-        logo: req.body.logo,
+        logo: req.file.cloudStoragePublicUrl,
         description: req.body.description
       },
       { new: true } // return new updated document
@@ -100,7 +109,10 @@ class EventModel {
   }
 
   static deleteEvent(req, res, next) {
-    Event.findByIdAndRemove(req.params.id)
+    Event.findOneAndRemove({
+      _id : req.params.id,
+      organizer : req.userId
+    })
     .then(event => {
       if (event) {
         res.status(200).json({

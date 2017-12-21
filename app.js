@@ -9,12 +9,15 @@ require('dotenv').config()
 
 const app = express();
 
-mongoose.connection.openUri(`mongodb://${process.env.USERNAMEDB}:${process.env.PASSWORDDB}@cluster0-shard-00-00-xrrgq.mongodb.net:27017,cluster0-shard-00-01-xrrgq.mongodb.net:27017,cluster0-shard-00-02-xrrgq.mongodb.net:27017/signmeupapi?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin`, { useMongoClient: true })
+// mongoose.connection.openUri(`mongodb://${process.env.USERNAMEDB}:${process.env.PASSWORDDB}@cluster0-shard-00-00-xrrgq.mongodb.net:27017,cluster0-shard-00-01-xrrgq.mongodb.net:27017,cluster0-shard-00-02-xrrgq.mongodb.net:27017/signmeupapi?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin`, { useMongoClient: true })
+console.log(process.env.MONGODB_CONN_STRING)
+
+mongoose.connect('mongodb://localhost/signmeup', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 mongoose.connection.once('open', () => {
   console.log('mongoose connection success');
 }).on('error', (error) => {
-  console.log('connection error');
+  console.log('connection error', error);
 })
 
 app.use(morgan('dev'));
