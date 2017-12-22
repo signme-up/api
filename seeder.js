@@ -1,7 +1,13 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 const faker = require('faker')
-mongoose.connect('mongodb://localhost/signmeupapi', { useMongoClient: true })
-mongoose.Promise = global.Promise
+mongoose.connection.openUri(process.env.MONGODB_CONN_STRING, { useMongoClient: true });
+mongoose.Promise = global.Promise;
+mongoose.connection.once('open', () => {
+  console.log('mongoose connection success');
+}).on('error', (error) => {
+  console.log('connection error', error);
+})
 
 let UserModel = require('./models/user')
 let GuestModel = require('./models/guest')

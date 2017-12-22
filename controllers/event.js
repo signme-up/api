@@ -6,6 +6,7 @@ class EventCtrl {
     Event.find({
       organizer : req.userId
     })
+    .populate('organizer')
     .then(events =>
       res.status(200).json({
         message: 'Events get success',
@@ -20,6 +21,7 @@ class EventCtrl {
       _id : req.params.id,
       organizer : req.userId
     })
+    .populate('organizer')
     .then(event => {
       if (event) {
         res.status(200).json({
@@ -43,6 +45,7 @@ class EventCtrl {
       description: req.body.description,
       organizer : req.userId
     })
+    .populate('organizer')
     .then(event => {
       res.status(200).json({
         message: 'Event successfully created',
@@ -69,6 +72,7 @@ class EventCtrl {
       },
       { new: true } // return new updated document
     )
+    .populate('organizer')
     .then(event => {
       if (event) {
         res.status(200).json({

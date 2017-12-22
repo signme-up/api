@@ -20,7 +20,7 @@ module.exports = {
 
         user.comparePassword(req.body.password, (err, success) => {
           if (err || !success) {
-            return res.status(200).json({
+            return res.status(403).json({
               message: 'Email or password not match'
             })
           }
