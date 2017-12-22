@@ -19,7 +19,6 @@ module.exports = {
       next(boom.forbidden('Admin role cant do this action'))
     } else {
       next()
-      
     }
   },
   isSelfOrAdmin: function(req, res, next) {

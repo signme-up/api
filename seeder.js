@@ -1,7 +1,13 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 const faker = require('faker')
-mongoose.connect('mongodb://localhost/signmeupapi', { useMongoClient: true })
-mongoose.Promise = global.Promise
+mongoose.connection.openUri(process.env.MONGODB_CONN_STRING, { useMongoClient: true });
+mongoose.Promise = global.Promise;
+mongoose.connection.once('open', () => {
+  console.log('mongoose connection success');
+}).on('error', (error) => {
+  console.log('connection error', error);
+})
 
 let UserModel = require('./models/user')
 let GuestModel = require('./models/guest')
@@ -16,7 +22,7 @@ function createUsers() {
   for (let i = 0; i < 10; i++) {
     users.push(
       UserModel.create({
-        email: faker.internet.email(),
+        email: faker.internet.email().toLowerCase(),
         password: '12345'
       })
     )
@@ -31,7 +37,7 @@ function createEvents(users) {
       let eventPromise = EventModel.create({
         name: faker.hacker.adjective(),
         logo: 'http://via.placeholder.com/350x150',
-        startDate: faker.date.future(),
+        startdate: faker.date.future(),
         organizer: user._id,
         description: faker.commerce.productAdjective()
       })
@@ -48,7 +54,7 @@ function createGuests(events) {
     console.log(randEvent._id)
     let guest = GuestModel.create({
       name: faker.name.firstName(),
-      email: faker.internet.email(),
+      email: faker.internet.email().toLowerCase(),
       identityurl: `https://randomuser.me/api/portraits/women/${randBetween(1,40)}.jpg`,
       event: randEvent._id
     })

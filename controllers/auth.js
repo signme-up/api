@@ -20,7 +20,7 @@ module.exports = {
 
         user.comparePassword(req.body.password, (err, success) => {
           if (err || !success) {
-            return res.status(200).json({
+            return res.status(403).json({
               message: 'Email or password not match'
             })
           }
@@ -47,12 +47,11 @@ module.exports = {
       password: req.body.password,
     })
       .then(user => {
-        const {_id, email} = user
         res.status(200).json({
           message: 'User signup successful',
           data: {
-            _id,
-            email
+            _id :user._id,
+            email : user.emai
           }
         })
       })
