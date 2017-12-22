@@ -3,14 +3,17 @@ const boom = require('boom')
 
 module.exports = {
   getGuests: function(req, res, next) {
+    console.log('eventId---->', req.params.eventId)
     GuestModel.find({
       event: req.params.eventId
     })
-      .then(guests =>
+      .then(guests =>{
+        console.log('guests',guests)
         res.status(200).json({
           message: 'Guests get success',
           data: guests
         })
+      }
       )
       .catch(err => next(boom.boomify(err)))
   },

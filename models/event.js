@@ -24,7 +24,7 @@ let eventSchema = new Schema(
   { timestamps: {} } // auto generate createdAt and updatedAt field
 )
 
-let EventModel = mongoose.model('Event', eventSchema)
 
 
-module.exports = EventModel;
+
+module.exports = mongoose.model('Event', eventSchema)
